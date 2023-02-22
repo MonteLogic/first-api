@@ -25,7 +25,7 @@ export const Edit = ({ attributes, setAttributes }) => {
 		// Hard-code the boolean values to true
 		const updatedValues = {
 			value1: false,
-			value2: true,
+			value2: false,
 			value3: true
 		};
 
