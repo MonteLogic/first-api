@@ -24,7 +24,7 @@ export const Edit = ({ attributes, setAttributes }) => {
 	useEffect(() => {
 		// Hard-code the boolean values to true
 		const updatedValues = {
-			value1: true,
+			value1: false,
 			value2: true,
 			value3: true
 		};

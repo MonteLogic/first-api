@@ -83,7 +83,9 @@ function update_boolean_values($request)
     $value1 = $params['value1'];
     $value2 = $params['value2'];
     $value3 = $params['value3'];
-
+    update_option('my_boolean_value_1', $value1);
+    update_option('my_boolean_value_2', $value2);
+    update_option('my_boolean_value_3', $value3);
     // Perform any validation or processing on the values here
 
     // Update the boolean values in the database or any other data source
@@ -91,8 +93,8 @@ function update_boolean_values($request)
 
     // Return the updated boolean values as a JSON response
     return array(
-        'value1' => $value1,
-        'value2' => $value2,
-        'value3' => $value3,
+        'value1' => get_option('my_boolean_value_1'),
+        'value2' => get_option('my_boolean_value_2'),
+        'value3' => get_option('my_boolean_value_3'),
     );
 }

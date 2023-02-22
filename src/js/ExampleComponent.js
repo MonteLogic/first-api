@@ -28,6 +28,13 @@ export const ExampleComponent = () => {
         setValue3(data.value3);
       });
   }, []);
+  console.log(4);
+  console.log(value2);
+  // alert(5);
+  // if (value2 == 1) {
+
+
+  // }
 
   return (
     <div className="first-api-example-component">
