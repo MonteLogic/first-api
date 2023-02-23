@@ -1,18 +1,4 @@
-/*
- * An example component that will be rendered at the bottom of the sidebar in
- * the Cart and Checkout blocks.
- */
-// export const ExampleComponent = ( { data } ) => {
-// 	return (
-// 		<div className="first-api-example-component">
-// 			Data passed to this component: { data[ 'example-data' ] }
-// 		</div>
-// 	);
-// };
-
-
 import { useEffect, useState } from '@wordpress/element';
-
 
 export const ExampleComponent = () => {
   const [value1, setValue1] = useState(false);
@@ -28,8 +14,8 @@ export const ExampleComponent = () => {
         setValue3(data.value3);
       });
   }, []);
-  console.log(4);
-  console.log(value2);
+  // console.log(4);
+  // console.log(value2);
   // alert(5);
   // if (value2 == 1) {
 
