@@ -44,9 +44,8 @@ export const Edit = ({ attributes, setAttributes }) => {
 			.then(data => {
 				console.log(data);
 			});
-	}, []);
+	}, [show_date_picker]);
 
-	const [hasFixedBackground, setHasFixedBackground] = useState(false);
 
 	return (
 		<div {...blockProps}>
