@@ -6,7 +6,9 @@ import {
 	useBlockProps,
 	RichText,
 	InspectorControls,
-} from '@wordpress/block-editor';
+} from '@wordpress/block-editor'
+
+import { ToggleControl } from '@wordpress/components';;
 import { PanelBody } from '@wordpress/components';
 import { CheckboxControl } from '@woocommerce/blocks-checkout';
 import { getSetting } from '@woocommerce/settings';
@@ -18,7 +20,8 @@ import './style.scss';
 const { optInDefaultText } = getSetting('first-api_data', '');
 
 export const Edit = ({ attributes, setAttributes }) => {
-	const { text } = attributes;
+	const { text, show_date_picker } = attributes;
+	console.log(show_date_picker);
 	const blockProps = useBlockProps();
 
 	useEffect(() => {
@@ -43,16 +46,26 @@ export const Edit = ({ attributes, setAttributes }) => {
 			});
 	}, []);
 
+	const [hasFixedBackground, setHasFixedBackground] = useState(false);
 
 	return (
 		<div {...blockProps}>
 			{/* Edit the value of the API here. */}
 
-
-
+			{/* The Control Panel will go here. */}
 
 			<InspectorControls>
-				<PanelBody title={__('Block options', 'first-api')}>
+				<PanelBody title={__('Component options', 'first-api')}>
+					{/* Add ToggleControl here. */}
+					<ToggleControl
+						label="Toggle Date Picker on/off"
+
+						checked={show_date_picker}
+
+						onChange={() => setAttributes({ show_date_picker: !show_date_picker })}
+
+
+					/>
 					Options for the block go here.
 				</PanelBody>
 			</InspectorControls>

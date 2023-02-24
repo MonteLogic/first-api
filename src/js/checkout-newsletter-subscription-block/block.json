@@ -2,9 +2,9 @@
 	"apiVersion": 2,
 	"name": "first-api/checkout-newsletter-subscription",
 	"version": "2.0.0",
-	"title": "Newsletter Subscription!",
+	"title": "Control Panel: Extended Checkout",
 	"category": "first-api",
-	"description": "Adds a newsletter subscription checkbox to the checkout.",
+	"description": "Control which components get shown on the screen.",
 	"supports": {
 		"html": false,
 		"align": false,
@@ -25,6 +25,12 @@
 			"source": "html",
 			"selector": ".wp-block-first-api-checkout-newsletter-subscription",
 			"default": ""
+		},
+		"show_date_picker": {
+			"type": "boolean",
+			"source": "html",
+			"selector": ".wp-block-first-api-checkout-newsletter-subscription",
+			"default": true
 		}
 	},
 	"textdomain": "first-api",

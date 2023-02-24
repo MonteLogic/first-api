@@ -16,14 +16,7 @@ export const DatePicker = () => {
                 setValue3(data.value3);
             });
     }, []);
-    // console.log(4);
-    // console.log(value2);
-    // alert(5);
-    // if (value2 == 1) {
 
-
-    // }
-    // alert(4);
 
     return (
         <div>
