@@ -25,12 +25,6 @@ export const Edit = ({ attributes, setAttributes }) => {
 	const blockProps = useBlockProps();
 
 	useEffect(() => {
-		// Hard-code the boolean values to true
-		const updatedValues = {
-			value1: false,
-			value2: false,
-			value3: true
-		};
 
 		// Send a PUT request to update the values on the server
 		fetch('/wp-json/my-api/v1/my-boolean-values', {
@@ -38,7 +32,14 @@ export const Edit = ({ attributes, setAttributes }) => {
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify(updatedValues)
+			body: JSON.stringify(
+				{
+					value1: show_date_picker,
+					value2: false,
+					value3: true
+				}
+
+			)
 		})
 			.then(response => response.json())
 			.then(data => {

@@ -28,8 +28,6 @@
 		},
 		"show_date_picker": {
 			"type": "boolean",
-			"source": "html",
-			"selector": ".wp-block-first-api-checkout-newsletter-subscription",
 			"default": true
 		}
 	},
