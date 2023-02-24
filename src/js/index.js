@@ -13,7 +13,7 @@ import './style.scss';
 import { registerFilters } from './filters';
 import { ExampleComponent } from './ExampleComponent';
 import { useEffect, useState } from '@wordpress/element';
-import { DatePicker } from './DatePicker';
+import { CardMessage } from './CardMessage';
 
 const exampleDataFromSettings = getSetting('first-api_data');
 
@@ -32,7 +32,7 @@ const render = () => {
 				<ExampleComponent />
 			</ExperimentalOrderMeta>
 			<ExperimentalOrderShippingPackages>
-				<DatePicker />
+				<CardMessage />
 			</ExperimentalOrderShippingPackages>
 		</>
 	);

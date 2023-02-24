@@ -26,9 +26,13 @@
 			"selector": ".wp-block-first-api-checkout-newsletter-subscription",
 			"default": ""
 		},
+		"show_card_message": {
+			"type": "boolean",
+			"default": false
+		},
 		"show_date_picker": {
 			"type": "boolean",
-			"default": true
+			"default": false
 		}
 	},
 	"textdomain": "first-api",

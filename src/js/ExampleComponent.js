@@ -9,11 +9,17 @@ export const ExampleComponent = () => {
     fetch('/wp-json/my-api/v1/my-boolean-values')
       .then(response => response.json())
       .then(data => {
+        console.log(data);
+
         setValue1(data.value1);
         setValue2(data.value2);
         setValue3(data.value3);
       });
   }, []);
+
+
+
+
 
 
   return (

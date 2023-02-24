@@ -2,7 +2,7 @@ import { useEffect, useState } from '@wordpress/element';
 import { ExperimentalOrderShippingPackages } from '@woocommerce/blocks-checkout';
 
 
-export const DatePicker = () => {
+export const CardMessage = () => {
     const [value1, setValue1] = useState(false);
     const [value2, setValue2] = useState(false);
     const [value3, setValue3] = useState(false);
@@ -14,13 +14,14 @@ export const DatePicker = () => {
                 setValue1(data.value1);
                 setValue2(data.value2);
                 setValue3(data.value3);
+                console.log(data);
             });
     }, []);
 
 
     return (
         <div>
-            {value3 ?  (
+            {value1 ?  (
                     <div>The card message will render here.</div>
             ) : null 
         }

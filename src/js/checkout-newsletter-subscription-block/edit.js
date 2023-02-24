@@ -20,8 +20,8 @@ import './style.scss';
 const { optInDefaultText } = getSetting('first-api_data', '');
 
 export const Edit = ({ attributes, setAttributes }) => {
-	const { text, show_date_picker } = attributes;
-	console.log(show_date_picker);
+	const { text, show_card_message } = attributes;
+	console.log(show_card_message);
 	const blockProps = useBlockProps();
 
 	useEffect(() => {
@@ -34,7 +34,7 @@ export const Edit = ({ attributes, setAttributes }) => {
 			},
 			body: JSON.stringify(
 				{
-					value1: show_date_picker,
+					value1: show_card_message,
 					value2: false,
 					value3: true
 				}
@@ -45,7 +45,7 @@ export const Edit = ({ attributes, setAttributes }) => {
 			.then(data => {
 				console.log(data);
 			});
-	}, [show_date_picker]);
+	}, [show_card_message]);
 
 
 	return (
@@ -58,15 +58,11 @@ export const Edit = ({ attributes, setAttributes }) => {
 				<PanelBody title={__('Component options', 'first-api')}>
 					{/* Add ToggleControl here. */}
 					<ToggleControl
-						label="Toggle Date Picker on/off"
-
-						checked={show_date_picker}
-
-						onChange={() => setAttributes({ show_date_picker: !show_date_picker })}
-
-
+						label="Toggle Card Message on/off"
+						checked={show_card_message}
+						onChange={() => setAttributes({ show_card_message: !show_card_message })}
 					/>
-					Options for the block go here.
+
 				</PanelBody>
 			</InspectorControls>
 			<CheckboxControl
