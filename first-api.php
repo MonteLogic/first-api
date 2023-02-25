@@ -52,22 +52,6 @@ function add_options()
 
 add_action('init', 'add_options');
 
-/**
- * Registers the slug as a block category with WordPress.
- */
-function register_FirstApi_block_category($categories)
-{
-    return array_merge(
-        $categories,
-        [
-            [
-                'slug' => 'first-api',
-                'title' => __('FirstApi Blocks', 'first-api'),
-            ],
-        ]
-    );
-}
-add_action('block_categories_all', 'register_FirstApi_block_category', 10, 2);
 
 add_action('rest_api_init', function () {
     register_rest_route('my-api/v1', '/my-boolean-values', array(
@@ -87,15 +71,7 @@ function my_boolean_values_callback($request)
     return $values;
 }
 
-// add_action('rest_api_init', function () {
-//     register_rest_route('my-api/v1', '/my-boolean-values', array(
-//         'methods' => 'PUT',
-//         'callback' => 'update_boolean_values',
-//         'permission_callback' => function () {
-//             return current_user_can('edit_others_posts');
-//         },
-//     ));
-// });
+
 
 add_action('rest_api_init', function () {
     register_rest_route('my-api/v1', '/my-boolean-values', array(
@@ -141,3 +117,22 @@ function update_boolean_values($request)
         'value3' => get_option('my_boolean_value_3'),
     );
 }
+
+
+
+/**
+ * Registers the slug as a block category with WordPress.
+ */
+function register_FirstApi_block_category($categories)
+{
+    return array_merge(
+        $categories,
+        [
+            [
+                'slug' => 'first-api',
+                'title' => __('FirstApi Blocks', 'first-api'),
+            ],
+        ]
+    );
+}
+add_action('block_categories_all', 'register_FirstApi_block_category', 10, 2);
